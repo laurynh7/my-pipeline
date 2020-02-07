@@ -32,5 +32,21 @@ pipeline {
          
       }
       
+      stage('Goodbye') {
+         parallel {
+            stage('leave'){
+               steps{
+                  echo 'Im leaving'
+               }
+            }
+            stage('Bye'){
+               steps {
+                  echo 'Goodbye'
+               }
+            }
+         }
+      }
+         
+      
    }
 }
